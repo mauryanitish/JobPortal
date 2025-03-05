@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+  <%@page isELIgnored = "false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +19,11 @@
 </style>
 </head>
 <body>
+
+<c:if test = "${userobj.role ne 'admin' }">
+<c:redirect url="login.jsp"></c:redirect>
+</c:if>
+
 <%@include file="all_component/navbar.jsp"%>
 
 	<div class="container-fluid back-img">

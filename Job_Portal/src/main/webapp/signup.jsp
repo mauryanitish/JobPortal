@@ -7,7 +7,7 @@
 <title>SignUp</title>
 <%@include file="all_component/all_css.jsp"%>
 </head>
-<body>
+<body style = "background-color : #f0f1f2;">
 <%@include file="all_component/navbar.jsp"%>
 
 	<div class="container-fuild">

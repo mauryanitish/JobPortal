@@ -1,3 +1,5 @@
+  <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+  <%@page isELIgnored = "false" %>
  <nav class="navbar navbar-expand-lg bg-custom">
       <div class="container-fluid">
         <a class="navbar-brand" style = "color:white;" href="#">Navbar</a>
@@ -15,18 +17,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#">Home
+              	<span class = "sr-only">(current)</span>
+              </a>
+            </li>
+            
+            <c:if test = "${userobj.role eq 'admin' }">
+             <li class="nav-item">
+              <a class="nav-link" href="add_job.jsp"><i class="fa-solid fa-circle-plus me-1"></i>Post Job</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-circle-plus me-1"></i>Post Job</a>
+              <a class="nav-link" href="viewJob.jsp"><i class="fa-solid fa-eye me-1"></i>View Job</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-eye me-1"></i>View Job</a>
-            </li>
+            </c:if>
+            
+           
           </ul>
           <form class="d-flex">
-            <a href="login.jsp" class="btn btn-light me-1"><i class="fa-solid fa-right-to-bracket me-1"></i>Login</a>
+          
+          <c:if test = "${not empty userobj }">
+                      <a href="#" class="btn btn-light me-1"><i class="fa-solid fa-user me-1"></i>Admin</a>
+                      <a href="#" class="btn btn-light "><i class="fa-solid fa-right-to-bracket me-1"></i>Logout</a>
+          
+          </c:if>
+          
+           <c:if test = "${empty userobj }">
+                                 <a href="login.jsp" class="btn btn-light me-1"><i class="fa-solid fa-right-to-bracket me-1"></i>Login</a>
             <a href="signup.jsp" class="btn btn-light "><i class="fa-solid fa-user me-1"></i>Signup</a>
+          </c:if>
           </form>
         </div>
       </div>

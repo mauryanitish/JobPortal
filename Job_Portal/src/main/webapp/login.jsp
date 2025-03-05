@@ -7,7 +7,7 @@
 <title>Login</title>
 <%@include file="all_component/all_css.jsp"%>
 </head>
-<body>
+<body style = "background-color : #f0f1f2;">
 <%@include file="all_component/navbar.jsp"%>
 
 	<div class="container-fuild">
@@ -21,12 +21,12 @@
 						</div>
 						<form action="login" method = "post">
 							<div class = "form-group">
-								<label>Enter Email</label><input typle="email" required="required" class ="form-control mt-2" id="exampleInputEmail1" aria-describedby ="emailHelp" name="em">
+								<label>Enter Email</label><input typle="email" required="required" class ="form-control mt-2" id="exampleInputEmail1" aria-describedby ="emailHelp" name="email">
 							</div>
 							<div class = "form-group mt-2">
 							<label for = "exampleInputPassword1">Enter Password</label>
 							<input required = "required" type="password" class="form-control mt-2"
-							id="exampleInputPassword1" name="ps">
+							id="exampleInputPassword1" name="password">
 							</div>
 							<div class = "d-grid form-group mt-2">
 							<button type="submit" class="btn btn-primary .col-6">Login</button>
