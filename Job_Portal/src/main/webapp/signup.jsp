@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+  <%@page isELIgnored = "false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,15 +21,18 @@
 							<i class="fa fa-user-plus fa-2x" aria-hidden = "true"></i>
 							<h5>Registration</h5>
 						</div>
-						<form action="login" method = "post">
+						<c:if test="${not empty succMsg }">
+							<h4 class = "text-center text-success">${succMsg}</h4>
+						</c:if>
+						<form action="addUser" method = "post">
 						<div class = "form-group">
-								<label>Enter Full Name</label><input typle="text" required="required" class ="form-control mt-2" id="exampleInputName" aria-describedby ="nameHelp" name="fn">
+								<label>Enter Full Name</label><input type="text" required="required" class ="form-control mt-2" id="exampleInputName" aria-describedby ="nameHelp" name="fn">
 							</div>
 							<div class = "form-group">
-								<label>Enter Qualification</label><input typle="text" required="required" class ="form-control mt-2" id="exampleInputQualification">
+								<label>Enter Qualification</label><input type="text" required="required" class ="form-control mt-2" id="exampleInputQualification" name = "qua">
 							</div>
 							<div class = "form-group">
-								<label>Enter Email</label><input typle="email" required="required" class ="form-control mt-2" id="exampleInputEmail1" aria-describedby ="emailHelp" name="em">
+								<label>Enter Email</label><input type="email" required="required" class ="form-control mt-2" id="exampleInputEmail1" aria-describedby ="emailHelp" name="em">
 							</div>
 							<div class = "form-group mt-2">
 							<label for = "exampleInputPassword1">Enter Password</label>

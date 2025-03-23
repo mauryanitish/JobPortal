@@ -19,6 +19,10 @@
 							<i class="fa fa-user-plus fa-2x" aria-hidden = "true"></i>
 							<h5>Login Page</h5>
 						</div>
+						<c:if test = "${not empty succMsg }">
+							<h4 class = "text-center text-danger">${succMsg }</h4>
+							<c:remove var = "succMsg"/>
+							</c:if>
 						<form action="login" method = "post">
 							<div class = "form-group">
 								<label>Enter Email</label><input typle="email" required="required" class ="form-control mt-2" id="exampleInputEmail1" aria-describedby ="emailHelp" name="email">
